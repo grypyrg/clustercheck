@@ -1,12 +1,12 @@
 Summary:     Percona Cluster Check
 Name:        percona-clustercheck
 Version:        1.0
-Release:        0
+Release:        2
 License:        none
 Source:         %{name}.tar.gz
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-build
-Requires:	python-twisted,MySQL-python
+Requires:	python-twisted-web,MySQL-python
 Group:          System/Base
 
 %description
@@ -47,3 +47,6 @@ rm -rf %{_topdir}/BUILD/%{name}
 %changelog
 * Wed May 21 2014  Todd Merritt <tmerritt@email.arizona.edu>
 - 1.0 r1 First rpm build
+
+* Tue Jan 13 2014 Kenny Gryp <gryp@dakin.be>
+- 1.0 r2 Centos 7 Requires python-twisted-web
