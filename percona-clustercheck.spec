@@ -45,8 +45,8 @@ rm -rf %{_topdir}/BUILD/%{name}
 %config /etc/sysconfig/percona-clustercheck
 
 %changelog
+* Tue Jan 13 2015 Kenny Gryp <gryp@dakin.be>
+- 1.0 r2 Centos 7 Requires python-twisted-web
+
 * Wed May 21 2014  Todd Merritt <tmerritt@email.arizona.edu>
 - 1.0 r1 First rpm build
-
-* Tue Jan 13 2014 Kenny Gryp <gryp@dakin.be>
-- 1.0 r2 Centos 7 Requires python-twisted-web
