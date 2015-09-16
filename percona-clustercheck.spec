@@ -1,7 +1,7 @@
 Summary:     Percona Cluster Check
 Name:        percona-clustercheck
-Version:        1.0
-Release:        2
+Version:        1.1
+Release:        1
 License:        none
 Source:         %{name}.tar.gz
 BuildArch:      noarch
@@ -25,9 +25,9 @@ mkdir -p $RPM_BUILD_ROOT/etc/sysconfig
 mkdir -p $RPM_BUILD_ROOT/usr/sbin
 
 # put the files in to the relevant directories.
-install -m 755 etc/init.d/percona-clustercheck $RPM_BUILD_ROOT/etc/init.d/
-install -m 755 etc/sysconfig/percona-clustercheck $RPM_BUILD_ROOT/etc/sysconfig/
-install -m 755 usr/sbin/clustercheck.py $RPM_BUILD_ROOT/usr/sbin
+install -m 755 percona-clustercheck.init $RPM_BUILD_ROOT/etc/init.d/percona-clustercheck
+install -m 755 percona-clustercheck.sysconfig $RPM_BUILD_ROOT/etc/sysconfig/percona-clustercheck
+install -m 755 clustercheck.py $RPM_BUILD_ROOT/usr/sbin
 
 %post
 # the post section is where you can run commands after the rpm is installed.
@@ -45,6 +45,9 @@ rm -rf %{_topdir}/BUILD/%{name}
 %config /etc/sysconfig/percona-clustercheck
 
 %changelog
+* Wed Sep 15 2015 Kenny Gryp <gryp@dakin.be>
+- 1.0 r1 bug fix @lefred where wrong state is returned, updated package spec
+
 * Tue Jan 13 2015 Kenny Gryp <gryp@dakin.be>
 - 1.0 r2 Centos 7 Requires python-twisted-web
 
